@@ -1,0 +1,12 @@
+log2rotate is designed to rotate backups with an optimal balance between retention and space usage. Instead of rotating backups using some familiar method such as daily, weekly, monthly, and yearly periods, it rotates backups using exponentially-growing periods. The exponential periods are based on the base 2 logarithm (log2x) or squaring (x2), depending on how you look at it.
+
+log2rotate makes the guarantee that the distance between the nth and (n+1)th backups will be no greater than twice the distance between the (n-1)th and nth backups. The optimal is periodically achieved. For example, on the 64th rotation, log2rotate will recommend retaining the backups numbered: 1, 2, 4, 8, 16, 32, and 64.
+
+How to Build
+============
+Just run make.
+
+Note that you'll need lhs2TeX installed (even though the .cabal file does not
+list it as a dependency). This is so that GHC can use lhs2TeX as a preprocessor
+(there is some verbatim LaTeX in log2rotate.lhs that throws off the default
+preprocessor).

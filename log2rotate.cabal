@@ -1,0 +1,30 @@
+Name:          log2rotate
+Version:       1.0
+Cabal-Version: >= 1.2
+License:       GPL
+License-File:  COPYING
+Copyright:     2009 Chris Forno
+Author:        Chris Forno (jekor)
+Maintainer:    jekor@jekor.com
+Stability:     stable
+Bug-Reports:   jekor@jekor.com
+Homepage:      http://jekor.com/log2rotate/
+Package-URL:   http://jekor.com/log2rotate/log2rotate.tar.gz
+Category:      Algorithms, List
+Synopsis:      reduce a continuous sequence of items using powers of 2
+Description:   log2rotate is designed for rotating backups with an optimal
+               balance between retention and space usage.  Instead of rotating
+               backups using some familiar method such as daily, weekly,
+               monthly, and yearly periods, it rotates backups using
+               exponentially-growing periods. The exponential periods are based
+               on the base 2 logarithm or squaring, depending on how you look
+               at it.
+Tested-With:   GHC == 6.10.4
+Build-Type:    Custom
+
+Executable log2rotate
+  Main-Is:       log2rotate.lhs
+  Build-Depends: base >= 4,
+                 old-locale,
+                 time
+  GHC-Options:   -Wall -pgmL lhs2TeX -optL--pre
